@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saringan Kanser Serviks (HPV) – Kelantan</title>
+
+  <style>
+    :root{
+      --bg:#f7f4ff;
+      --card:#ffffff;
+      --text:#1f2a44;
+      --muted:#5b647a;
+      --accent:#6d28d9;
+      --accent2:#14b8a6;
+      --line:rgba(31,42,68,.10);
+      --shadow:0 18px 60px rgba(31,42,68,.10);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% 0%, rgba(109,40,217,.14), transparent 60%),
+        radial-gradient(1000px 600px at 90% 10%, rgba(20,184,166,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg), #ffffff);
+      min-height:100vh;
+    }
+
+    .container{max-width:1120px;margin:0 auto;padding:22px 16px 70px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 0 16px;border-bottom:1px solid var(--line);
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 14px 40px rgba(109,40,217,.18);
+    }
+    .brand h1{margin:0;font-size:14px;line-height:1.1}
+    .brand .sub{margin-top:3px;font-size:12px;color:var(--muted)}
+
+    .nav{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      appearance:none;border:0;cursor:pointer;
+      padding:10px 14px;border-radius:999px;
+      background:#ffffff;color:var(--text);
+      border:1px solid rgba(31,42,68,.18);
+      transition:transform .08s ease, background .2s ease, box-shadow .2s ease;
+      text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+      font-weight:800;
+    }
+    .btn:hover{background:#f3f0ff;box-shadow:0 12px 28px rgba(31,42,68,.08)}
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent), #8b5cf6);
+      color:#fff;border-color:transparent;
+    }
+    .btn.primary:hover{filter:brightness(1.02)}
+    .btn.teal{
+      background:linear-gradient(135deg,var(--accent2), #34d399);
+      color:#063a35;border-color:transparent;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      padding:22px 0 8px;
+    }
+    @media (max-width: 900px){.hero{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+    .heroCard{
+      position:relative;
+      overflow:hidden;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute;inset:-80px -120px auto auto;
+      width:260px;height:260px;border-radius:999px;
+      background:radial-gradient(circle at 30% 30%, rgba(109,40,217,.18), transparent 60%);
+      pointer-events:none;
+    }
+
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      background:rgba(109,40,217,.10);
+      border:1px solid rgba(109,40,217,.20);
+      color:#3b1a8a;font-weight:900;font-size:12px;
+    }
+    .title{
+      margin:14px 0 8px;
+      font-size:38px;
+      line-height:1.05;
+      letter-spacing:-.02em;
+    }
+    @media (max-width: 520px){.title{font-size:32px}}
+    .desc{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .mini{margin-top:10px;color:var(--muted);font-size:12px;line-height:1.5}
+
+    .facts .fact{
+      padding:12px 12px;border-radius:14px;
+      background:#faf8ff;
+      border:1px solid rgba(31,42,68,.08);
+      margin-top:10px;
+    }
+    .facts .fact b{display:block;font-size:13px;margin-bottom:3px}
+    .facts .fact span{font-size:12.5px;color:var(--muted);line-height:1.45}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
+    @media (max-width: 900px){.grid{grid-template-columns:1fr}}
+
+    .sectionTitle{margin:0 0 8px;font-size:16px}
+    .muted{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+
+    .form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    @media (max-width: 520px){.form{grid-template-columns:1fr}}
+    label{font-size:12px;color:var(--muted);display:block;margin-bottom:6px;font-weight:700}
+    input,select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(31,42,68,.18);
+      background:#ffffff;
+      color:var(--text);
+      outline:none;
+    }
+    input:focus,select:focus{
+      border-color:rgba(109,40,217,.55);
+      box-shadow:0 0 0 4px rgba(109,40,217,.12)
+    }
+    .full{grid-column:1/-1}
+
+    .result{
+      margin-top:12px;
+      border-radius:16px;
+      padding:12px 14px;
+      border:1px solid rgba(31,42,68,.10);
+      background:#faf8ff;
+    }
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      font-weight:900;font-size:12px;border-radius:999px;padding:8px 10px;
+      border:1px solid rgba(31,42,68,.10);
+      background:#fff;
+      margin-bottom:8px;
+    }
+    .pill.ok{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.22)}
+    .pill.warn{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.22)}
+    .pill.bad{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.22)}
+
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+    /* media */
+    .mediaWrap{
+      margin-top:14px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(31,42,68,.08);
+      box-shadow:0 14px 40px rgba(31,42,68,.10);
+      background:#fff;
+    }
+    .mediaWrap img{display:block;width:100%;height:auto}
+    .video{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      display:block;
+    }
+
+    /* FAQ accordion */
+    .faqItem{margin-top:10px;border:1px solid rgba(31,42,68,.10);border-radius:14px;overflow:hidden;background:#fff}
+    .faqQ{
+      width:100%;
+      text-align:left;
+      padding:12px 14px;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      background:#faf8ff;
+      border:0;
+      font-weight:900;
+      color:var(--text);
+    }
+    .faqQ span{
+      width:26px;height:26px;border-radius:999px;
+      display:grid;place-items:center;
+      border:1px solid rgba(31,42,68,.12);
+      background:#fff;
+      font-size:16px;
+      flex:0 0 auto;
+    }
+    .faqA{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .28s ease;
+      padding:0 14px;
+    }
+    .faqItem.active .faqA{max-height:520px}
+    .faqA .muted{padding:12px 0}
+    .faqA ul{margin:8px 0 12px 18px;color:var(--muted);font-size:13px;line-height:1.6}
+
+    /* footer */
+    .footer{
+      margin-top:18px;border-top:1px solid var(--line);
+      padding-top:14px;color:var(--muted);font-size:12px;
+      display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;
+    }
+
+    /* back to top */
+    .toTop{
+      position:fixed;right:18px;bottom:18px;
+      width:46px;height:46px;border-radius:999px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent), #8b5cf6);
+      color:#fff;border:0;cursor:pointer;
+      box-shadow:0 18px 50px rgba(109,40,217,.22);
+      opacity:0;transform:translateY(8px);
+      transition:opacity .2s ease, transform .2s ease;
+    }
+    .toTop.show{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <h1>Saringan Kanser Serviks (HPV)</h1>
+          <div class="sub">Kelantan • Semakan kelayakan • Cari Klinik Kesihatan</div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a class="btn" href="#semak">Semak</a>
+        <a class="btn" href="#infografik">Infografik</a>
+        <a class="btn" href="#video">Video</a>
+        <a class="btn" href="#faq">FAQ</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card heroCard">
+        <span class="badge">✅ Wanita • 30–65 tahun</span>
+        <div class="title">Semak kelayakan<br/>Saringan HPV</div>
+        <p class="desc">
+          Masukkan maklumat ringkas untuk panduan awal. Pilih daerah dan cari Klinik Kesihatan berhampiran melalui Google Maps.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="#semak">Mulakan Semakan</a>
+          <a class="btn teal" href="#infografik">Lihat Infografik</a>
+        </div>
+        <div class="mini">
+          Nota: Semakan ini untuk panduan umum. Jika ada simptom seperti pendarahan luar biasa, sakit pelvis atau keputihan berbau,
+          sila rujuk klinik dengan segera.
+        </div>
+      </div>
+
+      <div class="card facts">
+        <h2 class="sectionTitle">Fakta ringkas</h2>
+        <div class="fact">
+          <b>HPV adalah virus biasa</b>
+          <span>Kebanyakan wanita pernah terdedah; majoriti jangkitan pulih sendiri.</span>
+        </div>
+        <div class="fact">
+          <b>Saringan membantu cegah kanser</b>
+          <span>Mengesan risiko awal sebelum menjadi prakanser/kanser.</span>
+        </div>
+        <div class="fact">
+          <b>Ujian mudah & cepat</b>
+          <span>Boleh dibuat di Klinik Kesihatan mengikut pelaksanaan setempat.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEMAK -->
+    <section class="card" id="semak">
+      <h2 class="sectionTitle">Semakan Kelayakan</h2>
+      <p class="muted">Isi umur, jarak masa sejak Pap smear, dan pilih daerah.</p>
+
+      <div class="form">
+        <div>
+          <label for="umur">Umur (tahun)</label>
+          <input id="umur" type="number" min="10" max="100" placeholder="Contoh: 35" />
+        </div>
+
+        <div>
+          <label for="pap">Berapa tahun sejak Pap smear terakhir?</label>
+          <input id="pap" type="number" min="0" max="50" placeholder="Contoh: 4" />
+        </div>
+
+        <div class="full">
+          <label for="pernah">Pernah hubungan seksual?</label>
+          <select id="pernah">
+            <option value="ya">Ya</option>
+            <option value="tidak">Tidak / belum pasti</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label for="daerah">Pilih Daerah</label>
+          <select id="daerah">
+            <option value="">-- Pilih Daerah --</option>
+            <option value="Bachok">Bachok</option>
+            <option value="Gua Musang">Gua Musang</option>
+            <option value="Jeli">Jeli</option>
+            <option value="Kota Bharu">Kota Bharu</option>
+            <option value="Kuala Krai">Kuala Krai</option>
+            <option value="Machang">Machang</option>
+            <option value="Pasir Mas">Pasir Mas</option>
+            <option value="Pasir Puteh">Pasir Puteh</option>
+            <option value="Tanah Merah">Tanah Merah</option>
+            <option value="Tumpat">Tumpat</option>
+          </select>
+        </div>
+
+        <div class="full" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
+          <button class="btn primary" type="button" onclick="semak()">Semak Sekarang</button>
+          <button class="btn" type="button" onclick="resetForm()">Reset</button>
+        </div>
+      </div>
+
+      <div class="result" id="result" style="display:none"></div>
+
+      <div class="actions" id="actions" style="display:none">
+        <button class="btn primary" type="button" onclick="cariKlinik()">Cari Klinik Kesihatan Di Daerah Ini</button>
+      </div>
+    </section>
+
+    <!-- INFOGRAFIK -->
+    <section class="card" id="infografik" style="margin-top:16px">
+      <h2 class="sectionTitle">Infografik Rasmi</h2>
+      <p class="muted">Pastikan fail gambar dinamakan <b>infografik-hpv.jpg</b> dan berada dalam folder yang sama dengan <b>index.html</b>.</p>
+
+      <div class="mediaWrap">
+        <img src="infografik-hpv.jpg" alt="Infografik Saringan HPV" />
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="card" id="video" style="margin-top:16px">
+      <h2 class="sectionTitle">Video Penerangan</h2>
+      <p class="muted">Video akan dipaparkan automatik (YouTube embed).</p>
+
+      <div class="mediaWrap">
+        <iframe class="video"
+          src="https://www.youtube.com/embed/MnmHEdQAQT0"
+          title="Video Penerangan HPV"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card" id="faq" style="margin-top:16px">
+      <h2 class="sectionTitle">Soalan Lazim (FAQ)</h2>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          1) Apakah virus HPV? <span>+</span>
+        </button>
+        <div class="faqA">
+          <p class="muted">
+            HPV (Human Papillomavirus) ialah virus yang biasa. Terdapat lebih 100 jenis HPV dan sebahagiannya adalah berisiko tinggi
+            yang dikaitkan dengan kanser serviks.
+          </p>
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          2) Bagaimana HPV berjangkit? <span>+</span>
+        </button>
+        <div class="faqA">
+          <p class="muted">
+            HPV boleh berjangkit melalui sentuhan kulit ke kulit dan melalui hubungan seksual. Jangkitan boleh berlaku walaupun tanpa gejala jelas.
+          </p>
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          3) Apa yang perlu saya fahami tentang hasil ujian saringan HPV? <span>+</span>
+        </button>
+        <div class="faqA">
+          <p class="muted">
+            Ujian HPV positif bermaksud anda telah terdedah kepada satu atau lebih jenis HPV berisiko tinggi.
+            Ujian positif tidak bermakna anda telah menghidap prakanser atau kanser serviks, tetapi menunjukkan anda berisiko mengalami
+            kelainan pada sel-sel serviks dan memerlukan pemeriksaan/rawatan susulan.
+          </p>
+          <p class="muted">
+            Sekiranya ujian positif, dapatkan pemeriksaan lanjut di klinik atau hospital. Sekiranya ujian negatif,
+            risiko adalah sangat rendah dan saringan biasanya diulang setiap lima tahun.
+          </p>
+        </div>
+      </div>
+
+      <div class="faqItem">
+        <button class="faqQ" type="button">
+          4) Jika keputusan negatif, adakah masih terdedah kepada jangkitan HPV? <span>+</span>
+        </button>
+        <div class="faqA">
+          <p class="muted">Walaupun negatif, anda masih berisiko jika terdedah kepada faktor risiko seperti:</p>
+          <ul>
+            <li>Mula melakukan hubungan seks di awal usia</li>
+            <li>Perokok</li>
+            <li>Sistem imun yang rendah</li>
+            <li>Pengambilan hormon perancang keluarga dalam jangka masa panjang tanpa pengawasan doktor</li>
+          </ul>
+          <p class="muted">
+            Saringan berkala tetap penting mengikut saranan semasa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© Kempen Saringan Kanser Serviks (HPV) • Kelantan</div>
+      <div>Untuk QR Code: guna link GitHub Pages</div>
+    </div>
+  </div>
+
+  <button class="toTop" id="toTop" title="Ke atas">↑</button>
+
+  <script>
+    // ====== Semakan kelayakan (boleh ubah ikut program Dr) ======
+    // Default:
+    // - Umur 30–65
+    // - Pernah hubungan seksual
+    // - Pap smear terakhir >= 3 tahun
+    function semak(){
+      const umur = Number(document.getElementById("umur").value);
+      const pap = Number(document.getElementById("pap").value);
+      const pernah = document.getElementById("pernah").value;
+
+      if(!umur || umur < 10 || umur > 100){
+        showResult("Sila masukkan umur yang sah.", "bad",
+          "Semak semula umur sebelum meneruskan.");
+        return;
+      }
+      if(isNaN(pap) || pap < 0){
+        showResult("Sila masukkan bilangan tahun sejak Pap smear terakhir.", "bad",
+          "Jika tidak pasti, isi anggaran atau rujuk klinik.");
+        return;
+      }
+
+      const inAge = (umur >= 30 && umur <= 65);
+      const sexuallyActive = (pernah === "ya");
+      const dueForScreening = (pap >= 3);
+
+      if(inAge && sexuallyActive && dueForScreening){
+        showResult("ANDA LAYAK untuk saringan HPV.", "ok",
+          "Sila pilih daerah dan klik ‘Cari Klinik’ untuk lokasi Klinik Kesihatan.");
+        document.getElementById("actions").style.display = "flex";
+      } else if(!inAge){
+        showResult("UMUR DI LUAR JULAT program (30–65 tahun).", "warn",
+          "Sila rujuk klinik untuk nasihat saringan yang sesuai mengikut risiko & sejarah perubatan.");
+        document.getElementById("actions").style.display = "flex";
+      } else if(!sexuallyActive){
+        showResult("Program saringan HPV biasanya untuk wanita yang pernah aktif seksual.", "warn",
+          "Jika ragu-ragu, rujuk klinik untuk nasihat individu.");
+        document.getElementById("actions").style.display = "flex";
+      } else if(!dueForScreening){
+        showResult("ANDA MUNGKIN BELUM PERLU saringan sekarang (Pap smear < 3 tahun).", "warn",
+          "Ikut jadual saringan. Jika ada simptom, rujuk klinik dengan segera.");
+        document.getElementById("actions").style.display = "flex";
+      } else {
+        showResult("Sila rujuk klinik untuk pengesahan.", "warn",
+          "Keputusan ini hanya panduan umum.");
+        document.getElementById("actions").style.display = "flex";
+      }
+    }
+
+    function cariKlinik(){
+      const daerah = document.getElementById("daerah").value;
+      if(!daerah){
+        alert("Sila pilih daerah dahulu.");
+        return;
+      }
+      const url = "https://www.google.com/maps/search/Klinik+Kesihatan+" +
+                  encodeURIComponent(daerah + " Kelantan");
+      window.open(url, "_blank");
+    }
+
+    function showResult(title, type, msg){
+      const result = document.getElementById("result");
+      const pillClass = type === "ok" ? "ok" : (type === "bad" ? "bad" : "warn");
+      result.innerHTML = `
+        <div class="pill ${pillClass}">${title}</div>
+        <p class="muted" style="margin:6px 0 0">${msg}</p>
+      `;
+      result.style.display = "block";
+    }
+
+    function resetForm(){
+      document.getElementById("umur").value = "";
+      document.getElementById("pap").value = "";
+      document.getElementById("pernah").value = "ya";
+      document.getElementById("daerah").value = "";
+      document.getElementById("result").style.display = "none";
+      document.getElementById("actions").style.display = "none";
+    }
+
+    // ====== FAQ accordion ======
+    document.querySelectorAll(".faqQ").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        const item = btn.parentElement;
+        const open = item.classList.toggle("active");
+        btn.querySelector("span").textContent = open ? "−" : "+";
+      });
+    });
+
+    // ====== Back to top ======
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", ()=>{
+      if(window.scrollY > 600) toTop.classList.add("show");
+      else toTop.classList.remove("show");
+    });
+    toTop.addEventListener("click", ()=>window.scrollTo({top:0, behavior:"smooth"}));
+  </script>
+</body>
+</html>
